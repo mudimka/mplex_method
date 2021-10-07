@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.26666666666666666" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab.controllers.ConditionsController">
+   <items>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+            <ColumnConstraints maxWidth="0.7499970272184271" minWidth="0.7499970272184271" prefWidth="0.7499970272184271" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="32.25000099092725" minHeight="10.0" prefHeight="20.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="66.75000303238633" minHeight="10.0" prefHeight="40.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="66.75000303238633" minHeight="10.0" prefHeight="20.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="70.25000289827588" minHeight="10.0" prefHeight="40.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="88.7499990835786" minHeight="10.0" prefHeight="20.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="20.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Spinner fx:id="varCount" editable="true" prefHeight="25.0" prefWidth="130.0" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                <valueFactory>
+                    <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory max="16" min="1" />
+                </valueFactory>
+            </Spinner>
+            <Label prefHeight="17.0" prefWidth="194.0" text="Число переменных" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
+            <Spinner fx:id="restrictCount" editable="true" prefHeight="25.0" prefWidth="130.0" GridPane.rowIndex="3">
+                <valueFactory>
+                    <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory max="16" min="1" />
+                </valueFactory>
+            </Spinner>
+            <Label prefHeight="17.0" prefWidth="194.0" text="Число ограничений" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="194.0" text="Задача оптимизации на " GridPane.rowIndex="4" />
+            <ComboBox fx:id="targetCombo" prefHeight="25.0" prefWidth="130.0" value="Минимум" GridPane.rowIndex="5">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Минимум" />
+                        <String fx:value="Максимум" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label prefHeight="17.0" prefWidth="194.0" text="Вид дробей" GridPane.rowIndex="6" />
+            <ComboBox fx:id="fractionCombo" prefWidth="130.0" value="Обыкновенный" GridPane.rowIndex="7">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Обыкновенный" />
+                        <String fx:value="Десятичный" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+         </children>
+      </GridPane>
+      <BorderPane prefHeight="385.0" prefWidth="416.0">
+         <bottom>
+            <Button fx:id="applyBtn" mnemonicParsing="false" onAction="#readConditions" prefHeight="40.0" prefWidth="168.0" text="Применить условия" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Целевая функция">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TableView fx:id="targetTable" editable="true" maxHeight="130.0" minWidth="-Infinity" prefHeight="60.0" prefWidth="367.0">
+                      <placeholder>
+                          <Label text="Таблица не заполнена"/>
+                      </placeholder>
+                      <columns>
+                          <TableColumn prefWidth="40.0" text="X1" />
+                          <TableColumn prefWidth="40.0" text="X2" />
+                          <TableColumn prefWidth="40.0" text="C" />
+                      </columns>
+                      <VBox.margin>
+                        <Insets bottom="20.0" left="15.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <Label text="Ограничения">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TableView fx:id="restrictTable" prefHeight="193.0" prefWidth="367.0">
+                    <columns>
+                      <TableColumn prefWidth="40.0" text="X1" />
+                      <TableColumn prefWidth="40.0" text="X2" />
+                        <TableColumn prefWidth="40.0" text="B" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </items>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</SplitPane>

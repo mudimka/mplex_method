@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="396.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label text="О программе" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+   </top>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <center>
+      <ScrollPane focusTraversable="false" prefHeight="409.0" prefWidth="571.0" style="-fx-focus-color: transparent; -fx-border-color: transparent;" BorderPane.alignment="CENTER">
+         <content>
+            <VBox prefHeight="1000.0" prefWidth="545.0">
+               <children>
+                  <Label alignment="TOP_LEFT" prefHeight="64.0" prefWidth="529.0" text="Данное приложение создано в качестве лабораторной работы. Приложение помогает решать задачи по оптимизации." wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="167.0" prefWidth="529.0" text="Чтобы начать ей пользовататься, достаточно во вкладке условия ввести все необходимые значения, а затем нажать кнопку &quot;Применить условия&quot;. После этого действия вы можете начать решать вашу задачу, либо сохранить её в виде файла, чтобы в будущем не вводить снова эти значения. Сохранение и открытие задачи происходит через пункт меню &quot;Файл&quot;. " wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="88.0" prefWidth="529.0" text="(Примечание: после открытия файла условий все значения уже будут введены в программу, поэтому не нужно нажимать на кнопку &quot;Применить условия&quot;)" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="234.0" prefWidth="529.0" text="(Примечание: Чтобы ввести значение в таблицу, сначала выделите это значение, затем кликните ещё раз по этой ячейке и вы войдёте в режим редактирования ячейки. Изменяете ячейку, как душе угодно и жмёте Enter, чтобы сохранить значение в ячейке, либо жмёте Esc, чтобы отменить изменения. Можно также просто выделить ячейку нажать любую клавишу и вы войдёте в режим редактирования. С помощью клавиши Tab можно легко переходить к следующей ячейке.)" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="70.0" prefWidth="529.0" text="Перейдите в нужную для вас вкладку (допустим симплекс).  Можете изменить базис, можете оставить какой есть.  " wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="529.0" text="Получение ответа сразу происходит путём нажатия кнопки &quot;Получить ответ&quot;." wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="529.0" text="Получение промежуточных результатов происходит через нажатие &quot;Шаг вперёд&quot;." wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="529.0" text="Сброс решения можно осуществить с помощью нажатие кнопки &quot;Сбросить&quot;." wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="529.0" text="Как только задача будет решена, под меню появится поле с Ответом на вашу задачу" wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="113.0" prefWidth="529.0" text="В случае нажатия кнопки &quot;Шаг вперёд&quot; и когда задача ещё не решена, необходимо выбирать опорный элементы. Они подсвечены зелёным или оранжевым. Зелёные - предпочтительные. Оранжевые - менее предпочтительные." wrapText="true">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </content>
+         <padding>
+            <Insets left="5.0" top="5.0" />
+         </padding>
+      </ScrollPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.27" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" stylesheets="@simplex.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab.controllers.ExtraSimplexController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="109.0" prefWidth="571.0">
+         <children>
+            <VBox layoutX="14.0" layoutY="4.0" prefHeight="97.0" prefWidth="524.0">
+               <children>
+                  <VBox fx:id="answerPane" prefHeight="91.0" prefWidth="524.0" visible="false">
+                     <children>
+                        <Label text="ОТВЕТ" />
+                        <TextArea fx:id="answerTextArea" editable="false" prefHeight="70.0" prefWidth="524.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></TextArea>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="301.0" prefWidth="571.0">
+         <children>
+            <GridPane layoutX="9.0" layoutY="10.0" prefHeight="286.0" prefWidth="571.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView fx:id="simplexTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowSpan="3">
+                      <placeholder>
+                          <Label text="Таблица не заполнена" />
+                      </placeholder>
+                      <columns>
+                      <TableColumn prefWidth="75.0" styleClass="first-column" text="X1" />
+                      <TableColumn prefWidth="75.0" text="X2" />
+                    </columns>
+                  </TableView>
+                  <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowSpan="3">
+                     <children>
+                        <VBox fx:id="extraPane" alignment="TOP_RIGHT" prefHeight="186.0" prefWidth="114.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="nextExtraBtn" mnemonicParsing="false" onAction="#nextExtraTable" text="Шаг вперёд" />
+                              <Button fx:id="quickExtraAnswerBtn" mnemonicParsing="false" onAction="#quickExtraAnswer" prefHeight="25.0" prefWidth="121.0" text="Получить ответ" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="simplexPane" alignment="TOP_RIGHT" prefHeight="94.0" prefWidth="114.0" spacing="20.0" visible="false">
+                           <children>
+                              <Button fx:id="nextSimplexBtn" mnemonicParsing="false" onAction="#nextSimplexTable" text="Шаг вперёд" visible="false" />
+                              <Button fx:id="quickSimplexAnswerBtn" mnemonicParsing="false" onAction="#quickSimplexAnswer" prefHeight="25.0" prefWidth="120.0" text="Получить ответ" visible="false" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="-200.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <Button fx:id="rollBackBtn" mnemonicParsing="false" onAction="#prevTable" text="Шаг назад" visible="false">
+                           <VBox.margin>
+                              <Insets left="-40.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="resetBtn" alignment="CENTER" mnemonicParsing="false" onAction="#resetTable" text="Сбросить" textFill="RED">
+                           <VBox.margin>
+                              <Insets top="90.0" />
+                           </VBox.margin></Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </GridPane>
+         </children></AnchorPane>
+  </items>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</SplitPane>
